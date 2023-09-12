@@ -12,7 +12,7 @@ const Form = () => {
           sx={{
             borderColor: "white !important",
             borderRadius: "8px",
-            width: "400px",
+            width: "450px",
             color: "white !important",
             border: "2px solid white !important",
           }}

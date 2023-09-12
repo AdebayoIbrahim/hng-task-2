@@ -1,8 +1,11 @@
 import React from "react";
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, Stack, Typography, Button } from "@mui/material";
 import Poster from "../assets/Poster.png";
 import Logo from "../assets/Logo.png";
 import Menu from "../assets/Menu.png";
+import imdb from "../assets/imdb.png";
+import tomato from "../assets/tomato.png";
+import { PlayCircle } from "@mui/icons-material";
 import Form from "../components/Form/form";
 const Home = () => {
   return (
@@ -46,6 +49,62 @@ const Home = () => {
             </Box>
           </Stack>
         </Stack>
+        <Box
+          pt={15}
+          sx={{ maxWidth: "500px", textAlign: "left", color: "white" }}
+        >
+          <Box>
+            <Typography fontSize={45}>John Wick 3:</Typography>
+            <Typography fontSize={45}>Parabellum</Typography>
+          </Box>
+          <Box pt={1.5}>
+            <Stack direction="row" alignItems="center" gap={4}>
+              <Stack direction="row">
+                <img src={imdb} alt="imdb" />
+                <Typography
+                  ml={2}
+                  component="span"
+                  sx={{ fontSize: "12px", textAlign: "center" }}
+                >
+                  86.0/100
+                </Typography>
+              </Stack>
+              <Stack direction="row">
+                <img src={tomato} alt="imdb" />
+                <Typography
+                  ml={2}
+                  component="span"
+                  sx={{ fontSize: "12px", textAlign: "center" }}
+                >
+                  97%
+                </Typography>
+              </Stack>
+            </Stack>
+          </Box>
+          <Box pt={1.5}>
+            <Typography
+              variant="span"
+              sx={{ maxWidth: "100px", fontSize: "15px" }}
+            >
+              John Wick is on the run after killing a member of the
+              international assassins' guild, and with a $14 million price tag
+              on his head, he is the target of hit men and women everywhere.
+            </Typography>
+          </Box>
+          <Box pt={1.5}>
+            <Button
+              startIcon={<PlayCircle />}
+              pt={6}
+              pb={16}
+              pl={16}
+              pr={16}
+              variant="contained"
+              sx={{ background: "#BE123C", borderRadius: "6px" }}
+            >
+              Watch Trailer
+            </Button>
+          </Box>
+        </Box>
       </Box>
     </>
   );
