@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { Box } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import Movieitem from "./movieItem";
 const Movielists = () => {
-  const [resultarr, setResultarr] = useState();
+  const [resultarr, setResultarr] = useState([]);
   const [load, setLoad] = useState(true);
-  const api_key = "d2af3cef5640d578a1839a201a48a67";
-  const api_url = `https://api.themoviedb.org/3/movie/popular?api_key=${api_key}`;
+
   useEffect(() => {
+    const api_key = "d2af3cef5640d578a1839a201a48a671";
+    const api_url = `https://api.themoviedb.org/3/movie/popular?api_key=${api_key}`;
     const fetchData = async () => {
       const options = {
         accept: "application/json",
@@ -28,11 +29,15 @@ const Movielists = () => {
   }, []);
 
   return load ? (
-    <h3>Loading...</h3>
+    <h3 className="load">Loading...</h3>
   ) : (
-    resultarr.map((item, id) => {
-      <Movieitem key={id} item={item} />;
-    })
+    <Box pt={3}>
+      <Grid container spacing={2}>
+        {resultarr.map((item, pos) => {
+          return <Movieitem key={pos} movies={item} />;
+        })}
+      </Grid>
+    </Box>
   );
 };
 
