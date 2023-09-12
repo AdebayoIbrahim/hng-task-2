@@ -7,6 +7,7 @@ import imdb from "../assets/imdb.png";
 import tomato from "../assets/tomato.png";
 import { PlayCircle } from "@mui/icons-material";
 import Form from "../components/Form/form";
+import Movielists from "../components/movies/movielist";
 const Home = () => {
   return (
     <>
@@ -105,6 +106,26 @@ const Home = () => {
             </Button>
           </Box>
         </Box>
+      </Box>
+      <Box sx={{ padding: "1.2rem 5%", color: "black" }}>
+        <Stack
+          direction="row"
+          justifyContent="space-between"
+          alignItems="center"
+        >
+          <Typography variant="body1" fontSize={36} fontWeight={700}>
+            Featured Movie
+          </Typography>
+          <Typography
+            color="#BE123C"
+            fontSize={14}
+            variant="caption"
+            fontWeight={500}
+          >
+            See more &gt;
+          </Typography>
+        </Stack>
+        <Movielists />
       </Box>
     </>
   );

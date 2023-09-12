@@ -22,4 +22,5 @@ body {
 #input:active {
   outline: none !important;
   border: none !important;
+  background: transparent !important;
 }
