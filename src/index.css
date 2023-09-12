@@ -2,8 +2,24 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: DM Sans, Poppins;
 }
 body {
   font-family: DM Sans, Poppins;
   color: red;
+}
+#input::placeholder {
+  color: white;
+  opacity: 1;
+  font-size: 15px;
+  font-family: DM Sans;
+}
+#input {
+  padding: 5px 10px !important;
+  color: white !important;
+}
+#input:focus,
+#input:active {
+  outline: none !important;
+  border: none !important;
 }
