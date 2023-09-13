@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Box, Typography, Stack, Button } from "@mui/material";
 import { useParams } from "react-router-dom";
 import Watch from "../../assets/watch.png";
-import genreData from "../shared/genreData";
+import Spinner from "../shared/Spinner";
 const Main = () => {
   const [moviearr, setMoviearr] = useState(null);
   const [spin, setSpin] = useState(true);
@@ -38,9 +38,7 @@ const Main = () => {
     <React.Fragment>
       <Box pt={5} pr={4}>
         {spin ? (
-          <Typography className="load" component="h3" pt={5}>
-            Loading...
-          </Typography>
+          <Spinner />
         ) : (
           <>
             <Box

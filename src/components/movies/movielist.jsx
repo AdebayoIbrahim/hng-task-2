@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Box, Grid, Typography } from "@mui/material";
 import Movieitem from "./movieItem";
+import Spinner from "../shared/Spinner";
 const Movielists = () => {
   const [resultarr, setResultarr] = useState([]);
   const [load, setLoad] = useState(true);
@@ -30,9 +31,7 @@ const Movielists = () => {
   }, []);
 
   return load ? (
-    <Typography className="load" component="h3" pt={5}>
-      Loading...
-    </Typography>
+    <Spinner />
   ) : (
     <Box pt={5}>
       <Grid container spacing={5} justifyContent="center">
