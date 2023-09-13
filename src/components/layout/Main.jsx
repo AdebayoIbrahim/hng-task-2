@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Box, Typography, Stack } from "@mui/material";
+import { Box, Typography, Stack, Button } from "@mui/material";
 import { useParams } from "react-router-dom";
 import Watch from "../../assets/watch.png";
+import genreData from "../shared/genreData";
 const Main = () => {
   const [moviearr, setMoviearr] = useState(null);
   const [spin, setSpin] = useState(true);
@@ -35,7 +36,7 @@ const Main = () => {
 
   return (
     <React.Fragment>
-      <Box pt={8} pr={4}>
+      <Box pt={5} pr={4}>
         {spin ? (
           <h2>Loading...</h2>
         ) : (
@@ -95,7 +96,7 @@ const Main = () => {
               justifyContent="space-between"
               color="black"
             >
-              <Stack direction="row" gap={2}>
+              <Stack direction="row" gap={1}>
                 <Typography
                   fontWeight={600}
                   variant=" = body1"
@@ -145,6 +146,50 @@ const Main = () => {
                 >
                   {`${moviearr.runtime}m`}
                 </Typography>
+                <Typography
+                  fontWeight={600}
+                  variant=" = body1"
+                  fontFamily="poppins"
+                >
+                  {/* {`${genreNames.join(", ")}`} */}
+                </Typography>
+              </Stack>
+            </Stack>
+            <Stack
+              pt={2}
+              pl={2}
+              pr={2}
+              direction="row"
+              justifyContent="space-between"
+            >
+              <Typography
+                fontFamily="poppins"
+                fontWeight={500}
+                color="black"
+                sx={{ maxWidth: "60ch" }}
+                variant="body2"
+              >{`${moviearr.overview}`}</Typography>
+              <Stack direction="column" gap={1}>
+                <Button
+                  variant="contained"
+                  sx={{
+                    padding: "1.2rem, 9rem",
+                    background: "rgba(190, 18, 60, 1)",
+                    color: "white",
+                  }}
+                >
+                  See Showtimes
+                </Button>
+                <Button
+                  variant="contained"
+                  sx={{
+                    padding: "1.2rem, 9rem",
+                    background: "rgba(190, 18, 60, .2)",
+                    color: "rgba(190, 18, 60, 1)",
+                  }}
+                >
+                  More watch options
+                </Button>
               </Stack>
             </Stack>
           </>
