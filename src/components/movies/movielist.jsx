@@ -34,7 +34,7 @@ const Movielists = () => {
     </Typography>
   ) : (
     <Box pt={5}>
-      <Grid container spacing={2}>
+      <Grid container spacing={5}>
         {resultarr.map((item, pos) => {
           return <Movieitem key={pos} movies={item} />;
         })}

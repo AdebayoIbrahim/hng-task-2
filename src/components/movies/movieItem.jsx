@@ -20,8 +20,21 @@ const Movieitem = ({ movies }) => {
             />
           </Box>
           <Stack pt={2} direction="column" gap={2}>
-            <Typography variant="caption">{movies.release_date}</Typography>
-            <Typography variant="body1">{movies.title}</Typography>
+            <Typography sx={{ color: "#9CA3AF" }} variant="caption">
+              {movies.release_date}
+            </Typography>
+            <Typography
+              fontSize={18}
+              fontWeight={700}
+              variant="body1"
+              sx={{
+                textOverflow: "elipsis !important",
+                whiteSpace: "nowrap !important",
+                overflow: "hidden !important",
+              }}
+            >
+              {movies.title}
+            </Typography>
             <Stack
               direction="row"
               alignItems="center"
