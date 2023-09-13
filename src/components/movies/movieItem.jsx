@@ -36,6 +36,7 @@ const Movieitem = ({ movies }) => {
               fontWeight={700}
               variant="body1"
               component={Link}
+              to={`/movies/${movies.id}`}
               color="black"
               sx={{
                 textOverflow: "elipsis !important",
