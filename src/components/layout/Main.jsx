@@ -20,6 +20,7 @@ const Main = () => {
       const result = await movieData.json();
       console.log(result);
     };
+    fetchMovie();
   }, []);
   return (
     <React.Fragment>
