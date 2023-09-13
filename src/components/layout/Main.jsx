@@ -38,7 +38,9 @@ const Main = () => {
     <React.Fragment>
       <Box pt={5} pr={4}>
         {spin ? (
-          <h2>Loading...</h2>
+          <Typography className="load" component="h3" pt={5}>
+            Loading...
+          </Typography>
         ) : (
           <>
             <Box

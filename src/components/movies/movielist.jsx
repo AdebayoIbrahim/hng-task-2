@@ -21,7 +21,8 @@ const Movielists = () => {
         return;
       }
       const result = await movieList.json();
-      const dataEnd = result.results;
+      //first 10
+      const dataEnd = result.results.slice(0, 10);
       setResultarr(dataEnd);
       setLoad(false);
     };
@@ -34,7 +35,7 @@ const Movielists = () => {
     </Typography>
   ) : (
     <Box pt={5}>
-      <Grid container spacing={5}>
+      <Grid container spacing={5} justifyContent="center">
         {resultarr.map((item, pos) => {
           return <Movieitem key={pos} movies={item} />;
         })}
