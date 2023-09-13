@@ -1,7 +1,8 @@
 import React from "react";
-import { Box, Stack } from "@mui/material";
+import { Box, Stack, Typography, Button } from "@mui/material";
 import { Link, useParams } from "react-router-dom";
 import Sidebar from "../components/layout/Sidebar";
+import { Logout } from "@mui/icons-material";
 const Movie = () => {
   const params = useParams();
   return (
@@ -17,6 +18,51 @@ const Movie = () => {
           }}
         >
           <Sidebar />
+          <Box pl={5} pr={5}>
+            <Box
+              pt={3}
+              pb={1}
+              sx={{
+                border: "2px solid rgba(190, 18, 60, .3)",
+                background: "rgba(190, 18, 60, .05)",
+                borderRadius: ".8em",
+                paddingInline: "1.4rem",
+              }}
+            >
+              <Typography variant="body1" color="black">
+                Play movie quizes and earn free tickets
+              </Typography>
+              <Typography variant="body2" pt={2} color="#666666">
+                50k people are playing now
+              </Typography>
+              <Box pt={4} textAlign="center">
+                <Typography
+                  component="button"
+                  variant="contained"
+                  sx={{
+                    all: "unset",
+                    borderRadius: "2rem",
+                    background: "rgba(190, 18, 60, .3)",
+                    color: "#BE123C",
+                    fontSize: "15px",
+                    padding: ".4rem .8rem",
+                  }}
+                >
+                  Start Playing
+                </Typography>
+              </Box>
+            </Box>
+            <Box pt={4} sx={{}}>
+              <Button
+                fontSize={20}
+                startIcon={<Logout />}
+                sx={{ color: "#666666" }}
+              >
+                {" "}
+                Log Out
+              </Button>
+            </Box>
+          </Box>
         </Box>
         <Box flex="7" sx={{ background: "white", height: "100vh" }}></Box>
       </Stack>

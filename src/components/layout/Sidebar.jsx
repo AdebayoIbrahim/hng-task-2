@@ -45,22 +45,22 @@ export default function Sidebar() {
         </Typography>
       </Stack>
       <Box
-        pt={8}
-        sx={{
-          position: "relative",
-          "&:after": {
-            content: '""',
-            position: "absolute",
-            bottom: "-5px",
-            width: "100%",
-            left: 0,
-            height: "1px",
-            background: "rgba(225,225,225,.7)",
-          },
-        }}
+        pt={4}
+        // sx={{
+        //   position: "relative",
+        //   "&:after": {
+        //     content: '""',
+        //     position: "absolute",
+        //     bottom: "-5px",
+        //     width: "100%",
+        //     left: 0,
+        //     height: "1px",
+        //     background: "rgba(225,225,225,.7)",
+        //   },
+        // }}
       >
         <List>
-          <Listitem disablePadding={true} mt={2}>
+          <Listitem disablePadding={true} mt={5}>
             <ListItemButton component={Link} to="/">
               <ListItemIcon sx={{ color: "black" }}>
                 <Home fontSize="16px" fill="black" />
@@ -68,7 +68,7 @@ export default function Sidebar() {
               <ListText primary="Home" />
             </ListItemButton>
           </Listitem>
-          <Listitem disablePadding={true} mt={2}>
+          <Listitem disablePadding={true} mt={5}>
             <ListItemButton component={Link} to="/important">
               <ListItemIcon sx={{ color: "black" }}>
                 <BiCameraMovie fontSize="16px" fill="black" />
@@ -76,7 +76,7 @@ export default function Sidebar() {
               <ListText primary="Movies" />
             </ListItemButton>
           </Listitem>
-          <Listitem disablePadding={true} mt={2}>
+          <Listitem disablePadding={true} mt={5}>
             <ListItemButton component={Link} to="/planned">
               <ListItemIcon sx={{ color: "black" }}>
                 <LiveTv fontSize="16px" fill="black" />
@@ -84,7 +84,7 @@ export default function Sidebar() {
               <ListText primary="Tv Series" />
             </ListItemButton>
           </Listitem>
-          <Listitem disablePadding={true} mt={2}>
+          <Listitem disablePadding={true} mt={5}>
             <ListItemButton component={Link} to="/tasks">
               <ListItemIcon sx={{ color: "black" }}>
                 <BiCalendar fontSize="16px" fill="black" />
