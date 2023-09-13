@@ -3,6 +3,7 @@ import { Grid, Box, Stack, Typography } from "@mui/material";
 import imdb from "../../assets/imdb.png";
 import tomato from "../../assets/tomato.png";
 import genreData from "../shared/genreData";
+import { Link, to } from "react-router-dom";
 const Movieitem = ({ movies }) => {
   const baseUrl = "https://image.tmdb.org/t/p/original";
 
@@ -34,10 +35,13 @@ const Movieitem = ({ movies }) => {
               fontSize={18}
               fontWeight={700}
               variant="body1"
+              component={Link}
+              color="black"
               sx={{
                 textOverflow: "elipsis !important",
                 whiteSpace: "nowrap !important",
                 overflow: "hidden !important",
+                textDecoration: "none",
               }}
             >
               {movies.title}
