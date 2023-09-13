@@ -147,21 +147,21 @@ const Home = () => {
           </Stack>
 
           <Stack direction="row" gap={4}>
-            <Typography fontSize={15} fontWeight={500}>
-              Condition of use
+            <Typography fontSize={15} fontWeight={700}>
+              Condition of Use
             </Typography>
-            <Typography fontSize={15} fontWeight={500}>
-              Privacy and policy
+            <Typography fontSize={15} fontWeight={700}>
+              Privacy &amp; Policy
             </Typography>
-            <Typography fontSize={15} fontWeight={500}>
-              press room
+            <Typography fontSize={15} fontWeight={700}>
+              Press Room
             </Typography>
           </Stack>
+          <Typography variant="body1" color="#9CA3AF">
+            &copy;
+            {`${new Date().getFullYear()}MovieBox by Abdulmumeen Ibrahim Adebayo  `}
+          </Typography>
         </Stack>
-        <Typography
-          variant="body2"
-          color="#9CA3AF"
-        >{`${new Date().getYear()}`}</Typography>
       </Box>
     </>
   );
