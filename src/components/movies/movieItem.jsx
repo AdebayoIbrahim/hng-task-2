@@ -2,89 +2,9 @@ import React from "react";
 import { Grid, Box, Stack, Typography } from "@mui/material";
 import imdb from "../../assets/imdb.png";
 import tomato from "../../assets/tomato.png";
+import genreData from "../shared/genreData";
 const Movieitem = ({ movies }) => {
   const baseUrl = "https://image.tmdb.org/t/p/original";
-
-  const genreData = {
-    genres: [
-      {
-        id: 28,
-        name: "Action",
-      },
-      {
-        id: 12,
-        name: "Adventure",
-      },
-      {
-        id: 16,
-        name: "Animation",
-      },
-      {
-        id: 35,
-        name: "Comedy",
-      },
-      {
-        id: 80,
-        name: "Crime",
-      },
-      {
-        id: 99,
-        name: "Documentary",
-      },
-      {
-        id: 18,
-        name: "Drama",
-      },
-      {
-        id: 10751,
-        name: "Family",
-      },
-      {
-        id: 14,
-        name: "Fantasy",
-      },
-      {
-        id: 36,
-        name: "History",
-      },
-      {
-        id: 27,
-        name: "Horror",
-      },
-      {
-        id: 10402,
-        name: "Music",
-      },
-      {
-        id: 9648,
-        name: "Mystery",
-      },
-      {
-        id: 10749,
-        name: "Romance",
-      },
-      {
-        id: 878,
-        name: "Science Fiction",
-      },
-      {
-        id: 10770,
-        name: "TV Movie",
-      },
-      {
-        id: 53,
-        name: "Thriller",
-      },
-      {
-        id: 10752,
-        name: "War",
-      },
-      {
-        id: 37,
-        name: "Western",
-      },
-    ],
-  };
 
   const genreNames = movies.genre_ids.map((genreId) => {
     const genre = genreData.genres.find((genre) => genre.id === genreId);
