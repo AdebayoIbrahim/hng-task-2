@@ -3,7 +3,7 @@ import { Grid, Box, Stack, Typography } from "@mui/material";
 import imdb from "../../assets/imdb.png";
 import tomato from "../../assets/tomato.png";
 import genreData from "../shared/genreData";
-import { Link, to } from "react-router-dom";
+import { Link } from "react-router-dom";
 const Movieitem = ({ movies }) => {
   const baseUrl = "https://image.tmdb.org/t/p/original";
 
@@ -14,10 +14,11 @@ const Movieitem = ({ movies }) => {
 
   return (
     <>
-      <Grid item xl={2} lg={3} md={4} sm={6} xs={12}>
+      <Grid item xl={2} lg={3} md={4} sm={6} xs={12} data-testid="movie-card">
         <Box>
           <Box>
             <img
+              data-testid="movie-poster"
               src={`${baseUrl}${movies.poster_path}`}
               alt="card-image"
               style={{
@@ -28,7 +29,11 @@ const Movieitem = ({ movies }) => {
             />
           </Box>
           <Stack pt={2} direction="column" gap={2}>
-            <Typography sx={{ color: "#9CA3AF" }} variant="caption">
+            <Typography
+              sx={{ color: "#9CA3AF" }}
+              variant="caption"
+              data-testid="movie-release-date"
+            >
               {movies.release_date}
             </Typography>
             <Typography
@@ -44,6 +49,7 @@ const Movieitem = ({ movies }) => {
                 overflow: "hidden !important",
                 textDecoration: "none",
               }}
+              data-testid="movie-title"
             >
               {movies.title}
             </Typography>
