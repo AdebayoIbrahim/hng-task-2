@@ -7,10 +7,18 @@ const Movie = () => {
   return (
     <Box>
       <Stack direction="row" gap={2} sx={{ width: "100%" }}>
-        <Box flex="1.8" sx={{ background: "yellow", height: "100vh" }}>
+        <Box
+          flex="1.8"
+          sx={{
+            background: "white",
+            height: "100vh",
+            border: "1px solid rgba(225,225,225,.7)",
+            borderRadius: "0 3em 3em 0",
+          }}
+        >
           <Sidebar />
         </Box>
-        <Box flex="7" sx={{ background: "red", height: "100vh" }}></Box>
+        <Box flex="7" sx={{ background: "white", height: "100vh" }}></Box>
       </Stack>
     </Box>
   );
