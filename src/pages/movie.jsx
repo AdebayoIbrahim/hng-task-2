@@ -1,10 +1,10 @@
 import React from "react";
 import { Box, Stack, Typography, Button } from "@mui/material";
-import { Link, useParams } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Sidebar from "../components/layout/Sidebar";
+import Main from "../components/layout/Main";
 import { Logout } from "@mui/icons-material";
 const Movie = () => {
-  const params = useParams();
   return (
     <Box>
       <Stack direction="row" gap={2} sx={{ width: "100%" }}>
@@ -64,7 +64,12 @@ const Movie = () => {
             </Box>
           </Box>
         </Box>
-        <Box flex="7" sx={{ background: "white", height: "100vh" }}></Box>
+        <Box flex="7" sx={{ background: "white", height: "100vh" }}>
+          <Routes>
+            <Route path="/" element={<Main />}></Route>
+            <Route path="/coming" element={<h1>upcoming</h1>}></Route>
+          </Routes>
+        </Box>
       </Stack>
     </Box>
   );

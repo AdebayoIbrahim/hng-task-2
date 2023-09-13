@@ -85,7 +85,7 @@ export default function Sidebar() {
             </ListItemButton>
           </Listitem>
           <Listitem disablePadding={true} mt={5}>
-            <ListItemButton component={Link} to="/tasks">
+            <ListItemButton component={Link} to="/coming">
               <ListItemIcon sx={{ color: "black" }}>
                 <BiCalendar fontSize="16px" fill="black" />
               </ListItemIcon>
