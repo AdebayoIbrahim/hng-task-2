@@ -1,5 +1,7 @@
 import React from "react";
-import { Grid, Box, Stack } from "@mui/material";
+import { Grid, Box, Stack, Typography } from "@mui/material";
+import imdb from "../../assets/imdb.png";
+import tomato from "../../assets/tomato.png";
 const Movieitem = ({ movies }) => {
   const baseUrl = "https://image.tmdb.org/t/p/original";
   return (
@@ -17,7 +19,36 @@ const Movieitem = ({ movies }) => {
               }}
             />
           </Box>
-          <Stack></Stack>
+          <Stack pt={2} direction="column" gap={2}>
+            <Typography variant="caption">{movies.release_date}</Typography>
+            <Typography variant="body1">{movies.title}</Typography>
+            <Stack
+              direction="row"
+              alignItems="center"
+              justifyContent="space-between"
+            >
+              <Stack direction="row">
+                <img src={imdb} alt="imdb" />
+                <Typography
+                  ml={2}
+                  component="span"
+                  sx={{ fontSize: "12px", textAlign: "center" }}
+                >
+                  86.0/100
+                </Typography>
+              </Stack>
+              <Stack direction="row">
+                <img src={tomato} alt="imdb" />
+                <Typography
+                  ml={2}
+                  component="span"
+                  sx={{ fontSize: "12px", textAlign: "center" }}
+                >
+                  97%
+                </Typography>
+              </Stack>
+            </Stack>
+          </Stack>
         </Box>
       </Grid>
     </>
