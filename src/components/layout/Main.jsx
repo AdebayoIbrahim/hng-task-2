@@ -2,9 +2,11 @@ import React, { useEffect } from "react";
 import { Box } from "@mui/material";
 import { useParams } from "react-router-dom";
 const Main = () => {
+  const params = useParams();
+
   useEffect(() => {
     const api_key = "d2af3cef5640d578a1839a201a48a671";
-    const api_url = `https://api.themoviedb.org/3/movie/615656?api_key=${api_key}`;
+    const api_url = `https://api.themoviedb.org/3/movie/${params.id}?api_key=${api_key}`;
     const fetchMovie = async () => {
       const options = {
         accept: "application/json",
