@@ -5,7 +5,13 @@ import Logo from "../assets/Logo.png";
 import Menu from "../assets/Menu.png";
 import imdb from "../assets/imdb.png";
 import tomato from "../assets/tomato.png";
-import { PlayCircle } from "@mui/icons-material";
+import {
+  PlayCircle,
+  Facebook,
+  YouTube,
+  Twitter,
+  Instagram,
+} from "@mui/icons-material";
 import Form from "../components/Form/form";
 import Movielists from "../components/movies/movielist";
 const Home = () => {
@@ -126,6 +132,36 @@ const Home = () => {
           </Typography>
         </Stack>
         <Movielists />
+        <Stack
+          pt={15}
+          direction="column"
+          justifyContent="center"
+          alignItems="center"
+          gap={5}
+        >
+          <Stack direction="row" gap={3}>
+            <Facebook />
+            <Instagram />
+            <Twitter />
+            <YouTube />
+          </Stack>
+
+          <Stack direction="row" gap={4}>
+            <Typography fontSize={15} fontWeight={500}>
+              Condition of use
+            </Typography>
+            <Typography fontSize={15} fontWeight={500}>
+              Privacy and policy
+            </Typography>
+            <Typography fontSize={15} fontWeight={500}>
+              press room
+            </Typography>
+          </Stack>
+        </Stack>
+        <Typography
+          variant="body2"
+          color="#9CA3AF"
+        >{`${new Date().getYear()}`}</Typography>
       </Box>
     </>
   );

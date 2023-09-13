@@ -68,7 +68,15 @@ const Movieitem = ({ movies }) => {
                 </Typography>
               </Stack>
             </Stack>
-            <Typography sx={{ color: "#9CA3AF" }} variant="caption">
+            <Typography
+              sx={{
+                color: "#9CA3AF",
+                textOverflow: "elipsis !important",
+                whiteSpace: "nowrap !important",
+                overflow: "hidden !important",
+              }}
+              variant="caption"
+            >
               {`${genreNames.join(", ")}`}
               Adventure
             </Typography>
