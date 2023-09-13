@@ -10,7 +10,11 @@ const Movieitem = ({ movies }) => {
             <img
               src={`${baseUrl}${movies.backdrop_path}`}
               alt="card-image"
-              style={{ width: "100%", height: "300px" }}
+              style={{
+                width: "100%",
+                aspectRatio: "1 / 1.5 ",
+                objectFit: "cover",
+              }}
             />
           </Box>
           <Stack></Stack>

@@ -107,7 +107,7 @@ const Home = () => {
           </Box>
         </Box>
       </Box>
-      <Box sx={{ padding: "1.2rem 5%", color: "black" }}>
+      <Box sx={{ padding: "2rem 5%", color: "black" }}>
         <Stack
           direction="row"
           justifyContent="space-between"

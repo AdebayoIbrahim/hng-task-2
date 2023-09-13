@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Box, Grid } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import Movieitem from "./movieItem";
 const Movielists = () => {
   const [resultarr, setResultarr] = useState([]);
@@ -29,9 +29,11 @@ const Movielists = () => {
   }, []);
 
   return load ? (
-    <h3 className="load">Loading...</h3>
+    <Typography className="load" component="h3" pt={5}>
+      Loading...
+    </Typography>
   ) : (
-    <Box pt={3}>
+    <Box pt={5}>
       <Grid container spacing={2}>
         {resultarr.map((item, pos) => {
           return <Movieitem key={pos} movies={item} />;
