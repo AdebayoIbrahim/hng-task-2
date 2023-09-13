@@ -1,7 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Box } from "@mui/material";
 import { useParams } from "react-router-dom";
 const Main = () => {
+  const [moviearr, setMoviearr] = useState([]);
+  const [spin, setSpin] = useState(true);
   const params = useParams();
 
   useEffect(() => {
@@ -27,7 +29,7 @@ const Main = () => {
   return (
     <React.Fragment>
       <Box pt={8} pr={4}>
-        <Box></Box>
+        <Box sx={{ width: "100%", height: "60vh" }}></Box>
       </Box>
     </React.Fragment>
   );

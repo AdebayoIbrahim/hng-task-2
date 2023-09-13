@@ -18,7 +18,7 @@ const Movieitem = ({ movies }) => {
         <Box>
           <Box>
             <img
-              src={`${baseUrl}${movies.backdrop_path}`}
+              src={`${baseUrl}${movies.poster_path}`}
               alt="card-image"
               style={{
                 width: "100%",
