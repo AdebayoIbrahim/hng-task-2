@@ -101,6 +101,7 @@ const Main = () => {
                   fontWeight={600}
                   variant=" = body1"
                   fontFamily="poppins"
+                  data-testid="movie-title"
                 >
                   {moviearr.original_title}
                 </Typography>
@@ -115,6 +116,7 @@ const Main = () => {
                   fontWeight={600}
                   variant=" = body1"
                   fontFamily="poppins"
+                  data-testid="movie-release-date"
                 >
                   {moviearr.release_date}
                 </Typography>
@@ -143,6 +145,7 @@ const Main = () => {
                   fontWeight={600}
                   variant=" = body1"
                   fontFamily="poppins"
+                  data-testid="movie-runtime"
                 >
                   {`${moviearr.runtime}m`}
                 </Typography>
@@ -168,6 +171,7 @@ const Main = () => {
                 color="black"
                 sx={{ maxWidth: "60ch" }}
                 variant="body2"
+                data-testid="movie-overview"
               >{`${moviearr.overview}`}</Typography>
               <Stack direction="column" gap={1}>
                 <Button
