@@ -83,7 +83,6 @@ const Movieitem = ({ movies }) => {
               variant="caption"
             >
               {`${genreNames.join(", ")}`}
-              Adventure
             </Typography>
           </Stack>
         </Box>
