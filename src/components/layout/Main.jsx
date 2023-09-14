@@ -123,7 +123,7 @@ const Main = () => {
                   fontFamily="poppins"
                   data-testid="movie-release-date"
                 >
-                  {moviearr.release_date}
+                  {new Date(String(moviearr.release_date)).toUTCString()}
                 </Typography>
                 <Typography
                   fontWeight={600}
