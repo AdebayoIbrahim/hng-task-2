@@ -12,7 +12,14 @@ const Form = () => {
           sx={{
             borderColor: "white !important",
             borderRadius: "8px",
-            width: "450px",
+            width: { md: "400px", lg: "50ppx", sm: "300px", xl: "700px" },
+            transform: {
+              xs: "translate(-50%,-50%)",
+              sm: "none",
+            },
+            position: { xs: "absolute", sm: "initial" },
+            left: { xs: "50%" },
+            top: { xs: "15%" },
             color: "white !important",
             border: "2px solid white !important",
           }}
