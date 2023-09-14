@@ -52,6 +52,7 @@ Getting Started
 Welcome to version 3 of The Movie Database (TMDB) API. This is where you will find the definitive list of currently available methods for our movie, tv, actor and image API.
 ## Runnin on local machine
 
-#### clon the repo ```git clone https:///``` to install packages
+#### clon the repo ```https://github.com/AdebayoIbrahim/hng-task-2.git``` to install packages
 ####run on local server ```npm start```
 cd into the root folder and run ```npm i``` to install
+##URL(https://movie-pot.netlify.app/)
