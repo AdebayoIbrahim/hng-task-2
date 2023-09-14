@@ -30,13 +30,13 @@ const Home = () => {
       const movieList = await fetch(`${api_url}`, options);
 
       if (!movieList.ok) {
-        alert("Failed To Fetch");
+        alert("Network Error");
         console.log("Error" + movieList.status);
         return;
       }
       const result = await movieList.json();
       //random 5
-      const dataEnd = result.results.slice(0, 5);
+      const dataEnd = result.results;
       const random = dataEnd[Math.floor(Math.random() * dataEnd.length)];
       setMovieinf(random);
       setBg(`${baseUrl}${random.backdrop_path}`);
@@ -91,8 +91,7 @@ const Home = () => {
           sx={{ maxWidth: "500px", textAlign: "left", color: "white" }}
         >
           <Box>
-            <Typography fontSize={45}>John Wick 3:</Typography>
-            <Typography fontSize={45}>Parabellum</Typography>
+            <Typography fontSize={45}>{movieInf.original_title}</Typography>
           </Box>
           <Box pt={1.5}>
             <Stack direction="row" alignItems="center" gap={4}>
@@ -123,9 +122,7 @@ const Home = () => {
               variant="span"
               sx={{ maxWidth: "100px", fontSize: "15px" }}
             >
-              John Wick is on the run after killing a member of the
-              international assassins' guild, and with a $14 million price tag
-              on his head, he is the target of hit men and women everywhere.
+              {movieInf.overview}
             </Typography>
           </Box>
           <Box pt={1.5}>
