@@ -44,7 +44,14 @@ Submission Deadline:
 The deadline for submissions is 14th September 2023, 11:59 PM GMT. Late submissions will not be entertained.
 Link to submission form again: https://docs.google.com/forms/d/e/1FAIpQLSf-oxF8XvHCuCiBg3ktBxuNxk2tPk2SQq_-02sx7TBQlBd7Xg/viewform
 PPS: THE API MIGHT NOT RETURN ALL THE INFO ON THE SECOND PAGE OF THE DESIGN, ADD THE ESSENTIAL ONES THAT ARE LISTEN ABOVE. THE SIDEBAR DOESN'T NEED TO BE FUNCTIONAL.
+
+
 YOU MAY USE ANY CSS FRAMEWORK/LIBRARY OF YOUR CHOICE (edited) 
 The Movie Database (TMDB)The Movie Database (TMDB)
 Getting Started
 Welcome to version 3 of The Movie Database (TMDB) API. This is where you will find the definitive list of currently available methods for our movie, tv, actor and image API.
+## Runnin on local machine
+
+#### clon the repo ```git clone https:///``` to install packages
+####run on local server ```npm start```
+cd into the root folder and run ```npm i``` to install
