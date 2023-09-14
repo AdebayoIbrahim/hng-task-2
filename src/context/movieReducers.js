@@ -8,8 +8,12 @@ const MovieReducer = (state, action) => {
         movies: action.payload,
         loading: false,
       };
-    case "GET_MOVIE":
-      return {};
+    case "FETCH_MOVIES_ALL":
+      return {
+        ...state,
+        movies: action.payload,
+        loading: false,
+      };
     default:
       return state;
   }

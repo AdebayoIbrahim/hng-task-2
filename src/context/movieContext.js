@@ -8,6 +8,7 @@ export const MovieContextProvider = ({ children }) => {
   };
   const [state, dispatch] = useReducer(MovieReducer, initialState);
 
+  //fetching top10 movies
   const fetchMovies = async () => {
     const api_key = "d2af3cef5640d578a1839a201a48a671";
     const params = new URLSearchParams({
@@ -34,12 +35,39 @@ export const MovieContextProvider = ({ children }) => {
       payload: dataEnd,
     });
   };
+  //fetching top movies all with see-all button
+  const fetchMoviesall = async () => {
+    const api_key = "d2af3cef5640d578a1839a201a48a671";
+    const params = new URLSearchParams({
+      api_key: api_key,
+    });
+    const api_url = `https://api.themoviedb.org/3/movie/popular?${params}`;
+
+    const options = {
+      accept: "application/json",
+      method: "GET",
+    };
+    const movieList = await fetch(`${api_url}`, options);
+    if (!movieList.ok) {
+      alert("Failed To Fetch");
+      console.log("Error" + movieList.status);
+      return;
+    }
+    const result = await movieList.json();
+    //All
+    const dataEnd = result.results;
+    dispatch({
+      type: "FETCH_MOVIES_ALL",
+      payload: dataEnd,
+    });
+  };
   return (
     <React.Fragment>
       <MovieContext.Provider
         value={{
           ...state,
           fetchMovies,
+          fetchMoviesall,
         }}
       >
         {children}

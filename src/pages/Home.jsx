@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Box, Stack, Typography, Button } from "@mui/material";
 // import Poster from "../assets/Poster.png";
 import Logo from "../assets/Logo.png";
@@ -14,7 +14,9 @@ import {
 } from "@mui/icons-material";
 import Form from "../components/Form/form";
 import Movielists from "../components/movies/movielist";
+import MovieContext from "../context/movieContext";
 const Home = () => {
+  const { fetchMoviesall } = useContext(MovieContext);
   const [movieInf, setMovieinf] = useState([]);
   const [bg, setBg] = useState("");
 
@@ -47,7 +49,7 @@ const Home = () => {
     // eslint-disable-next-line
   }, []);
   const seeMore = () => {
-    alert("sees more");
+    fetchMoviesall();
   };
   return (
     <>
