@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Box, TextField, InputAdornment } from "@mui/material";
 import { Search } from "@mui/icons-material";
 const Form = () => {
+  const [value, setValue] = useState("");
+  const handleChange = (e) => {
+    setValue(e.target.value);
+  };
   return (
     <>
       <Box component="form">
@@ -9,6 +13,8 @@ const Form = () => {
           id="input"
           variant="outlined"
           placeholder="What Do You Want?"
+          value={value}
+          onChange={handleChange}
           sx={{
             borderColor: "white !important",
             borderRadius: "8px",
