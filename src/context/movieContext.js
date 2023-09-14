@@ -9,9 +9,6 @@ export const MovieContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(MovieReducer, initialState);
 
   const fetchMovies = async () => {
-    dispatch({
-      type: "LOAD",
-    });
     const api_key = "d2af3cef5640d578a1839a201a48a671";
     const params = new URLSearchParams({
       api_key: api_key,
@@ -42,7 +39,6 @@ export const MovieContextProvider = ({ children }) => {
       <MovieContext.Provider
         value={{
           ...state,
-          movies,
           fetchMovies,
         }}
       >

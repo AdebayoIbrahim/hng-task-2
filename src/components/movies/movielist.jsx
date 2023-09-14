@@ -2,21 +2,20 @@ import React, { useEffect, useState, useContext } from "react";
 import { Box, Grid } from "@mui/material";
 import Movieitem from "./movieItem";
 import Spinner from "../shared/Spinner";
-import MovieReducer from "../../context/movieReducers";
+import MovieContext from "../../context/movieContext";
 const Movielists = () => {
-  const [resultarr, setResultarr] = useState([]);
-  const [load, setLoad] = useState(true);
+  const { movies, loading, fetchMovies } = useContext(MovieContext);
 
-  const { movies, loading } = useContext(MovieReducer);
+  useEffect(() => {
+    fetchMovies();
+  }, []);
 
-  useEffect(() => {}, []);
-
-  return load ? (
+  return loading ? (
     <Spinner />
   ) : (
     <Box pt={5}>
       <Grid container spacing={5} justifyContent="center">
-        {resultarr.map((item, pos) => {
+        {movies.map((item, pos) => {
           return <Movieitem key={pos} movies={item} />;
         })}
       </Grid>
