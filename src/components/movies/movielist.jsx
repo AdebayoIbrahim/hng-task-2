@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import Movieitem from "./movieItem";
 import Spinner from "../shared/Spinner";
 const Movielists = () => {

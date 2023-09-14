@@ -6,12 +6,15 @@ import Spinner from "../shared/Spinner";
 const Main = () => {
   const [moviearr, setMoviearr] = useState(null);
   const [spin, setSpin] = useState(true);
+
   const params = useParams();
 
   //image url
   const baseUrl = "https://image.tmdb.org/t/p/original";
+
   useEffect(() => {
     const api_key = "d2af3cef5640d578a1839a201a48a671";
+
     const api_url = `https://api.themoviedb.org/3/movie/${params.id}?api_key=${api_key}`;
 
     const fetchMovie = async () => {
@@ -32,6 +35,7 @@ const Main = () => {
       setMoviearr(result);
     };
     fetchMovie();
+    // eslint-disable-next-line
   }, []);
 
   return (
@@ -70,6 +74,7 @@ const Main = () => {
                 >
                   <img
                     src={Watch}
+                    alt="watch"
                     style={{
                       position: "absolute",
                       top: "50%",

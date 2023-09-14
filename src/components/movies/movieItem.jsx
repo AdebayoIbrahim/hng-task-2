@@ -20,7 +20,7 @@ const Movieitem = ({ movies }) => {
             <img
               data-testid="movie-poster"
               src={`${baseUrl}${movies.poster_path}`}
-              alt="card-image"
+              alt="card-box"
               style={{
                 width: "100%",
                 aspectRatio: "1 / 1.5 ",
