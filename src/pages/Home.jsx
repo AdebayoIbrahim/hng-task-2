@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Box, Stack, Typography, Button } from "@mui/material";
 import Poster from "../assets/Poster.png";
 import Logo from "../assets/Logo.png";
@@ -15,11 +15,41 @@ import {
 import Form from "../components/Form/form";
 import Movielists from "../components/movies/movielist";
 const Home = () => {
+  const [movieInf, setMovieinf] = useState();
+  const [bg, setBg] = useState("");
+
+  const baseUrl = "https://image.tmdb.org/t/p/original";
+  useEffect(() => {
+    const api_key = "d2af3cef5640d578a1839a201a48a671";
+    const api_url = `https://api.themoviedb.org/3/movie/popular?api_key=${api_key}`;
+    const fetchData = async () => {
+      const options = {
+        accept: "application/json",
+        method: "GET",
+      };
+      const movieList = await fetch(`${api_url}`, options);
+
+      if (!movieList.ok) {
+        alert("Failed To Fetch");
+        console.log("Error" + movieList.status);
+        return;
+      }
+      const result = await movieList.json();
+      //random 5
+      const dataEnd = result.results.slice(0, 5);
+      const random = dataEnd[Math.floor(Math.random() * dataEnd.length)];
+      setMovieinf(random);
+      setBg(`${baseUrl}${random.backdrop_path}`);
+    };
+    const interval = setInterval(fetchData, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <>
       <Box
         sx={{
-          background: `url(${Poster})`,
+          background: `url(${bg})`,
           width: "100%",
           minHeight: "90vh",
           backgroundSize: "cover",
