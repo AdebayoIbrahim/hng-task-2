@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useContext } from "react";
 import { Box, Grid } from "@mui/material";
 import Movieitem from "./movieItem";
 import Spinner from "../shared/Spinner";
@@ -8,6 +8,7 @@ const Movielists = () => {
 
   useEffect(() => {
     fetchMovies();
+    // eslint-disable-next-line
   }, []);
 
   return loading ? (

@@ -46,7 +46,9 @@ const Home = () => {
     return () => clearInterval(interval);
     // eslint-disable-next-line
   }, []);
-
+  const seeMore = () => {
+    alert("sees more");
+  };
   return (
     <>
       <Box
@@ -155,7 +157,9 @@ const Home = () => {
             color="#BE123C"
             fontSize={14}
             variant="caption"
+            sx={{ cursor: "pointer" }}
             fontWeight={500}
+            onClick={seeMore}
           >
             See more &gt;
           </Typography>

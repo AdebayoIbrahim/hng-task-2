@@ -10,6 +10,8 @@ const MovieReducer = (state, action) => {
       };
     case "GET_MOVIE":
       return {};
+    default:
+      return state;
   }
 };
 
