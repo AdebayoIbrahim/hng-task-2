@@ -15,6 +15,7 @@ const Movie = () => {
             height: "100vh",
             border: "1px solid rgba(225,225,225,.7)",
             borderRadius: "0 3em 3em 0",
+            overflow: "auto !important",
           }}
         >
           <Sidebar />
