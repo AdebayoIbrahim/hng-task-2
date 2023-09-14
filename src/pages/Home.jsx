@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Box, Stack, Typography, Button } from "@mui/material";
-import Poster from "../assets/Poster.png";
+// import Poster from "../assets/Poster.png";
 import Logo from "../assets/Logo.png";
 import Menu from "../assets/Menu.png";
 import imdb from "../assets/imdb.png";
@@ -15,7 +15,7 @@ import {
 import Form from "../components/Form/form";
 import Movielists from "../components/movies/movielist";
 const Home = () => {
-  const [movieInf, setMovieinf] = useState();
+  const [movieInf, setMovieinf] = useState([]);
   const [bg, setBg] = useState("");
 
   const baseUrl = "https://image.tmdb.org/t/p/original";
@@ -41,8 +41,10 @@ const Home = () => {
       setMovieinf(random);
       setBg(`${baseUrl}${random.backdrop_path}`);
     };
+    fetchData();
     const interval = setInterval(fetchData, 3000);
     return () => clearInterval(interval);
+    // eslint-disable-next-line
   }, []);
 
   return (
