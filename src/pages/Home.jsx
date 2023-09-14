@@ -42,7 +42,7 @@ const Home = () => {
       setBg(`${baseUrl}${random.backdrop_path}`);
     };
     fetchData();
-    const interval = setInterval(fetchData, 3000);
+    const interval = setInterval(fetchData, 5000);
     return () => clearInterval(interval);
     // eslint-disable-next-line
   }, []);
