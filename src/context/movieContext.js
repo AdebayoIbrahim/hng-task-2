@@ -7,15 +7,13 @@ export const MovieContextProvider = ({ children }) => {
     loading: true,
   };
   const [state, dispatch] = useReducer(MovieReducer, initialState);
-
+  const api_key = "d2af3cef5640d578a1839a201a48a671";
+  const params = new URLSearchParams({
+    api_key: api_key,
+  });
+  const api_url = `https://api.themoviedb.org/3/movie/popular?${params}`;
   //fetching top10 movies
   const fetchMovies = async () => {
-    const api_key = "d2af3cef5640d578a1839a201a48a671";
-    const params = new URLSearchParams({
-      api_key: api_key,
-    });
-    const api_url = `https://api.themoviedb.org/3/movie/popular?${params}`;
-
     const options = {
       accept: "application/json",
       method: "GET",
@@ -37,12 +35,6 @@ export const MovieContextProvider = ({ children }) => {
   };
   //fetching top movies all with see-all button
   const fetchMoviesall = async () => {
-    const api_key = "d2af3cef5640d578a1839a201a48a671";
-    const params = new URLSearchParams({
-      api_key: api_key,
-    });
-    const api_url = `https://api.themoviedb.org/3/movie/popular?${params}`;
-
     const options = {
       accept: "application/json",
       method: "GET",
@@ -61,6 +53,9 @@ export const MovieContextProvider = ({ children }) => {
       payload: dataEnd,
     });
   };
+
+  //search movies
+  const searchMovies = async (search) => {};
   return (
     <React.Fragment>
       <MovieContext.Provider
