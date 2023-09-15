@@ -1,5 +1,5 @@
 import React, { useEffect, useContext } from "react";
-import { Box, Grid } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import Movieitem from "./movieItem";
 import Spinner from "../shared/Spinner";
 import MovieContext from "../../context/movieContext";
@@ -10,6 +10,10 @@ const Movielists = () => {
     fetchMovies();
     // eslint-disable-next-line
   }, []);
+
+  if (movies.length < 1) {
+    return <Typography>You are all Caught up! Nothing to display.</Typography>;
+  }
 
   return loading ? (
     <Spinner />
