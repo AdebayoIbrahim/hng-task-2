@@ -16,8 +16,8 @@ const Form = () => {
       alert("Search cant be Empty");
       return;
     } else {
-      // searchMovies(value)
-      alert("good to go");
+      searchMovies(value);
+      // alert("good to go");
     }
   };
   return (

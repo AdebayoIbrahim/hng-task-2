@@ -56,8 +56,13 @@ export const MovieContextProvider = ({ children }) => {
 
   //search movies
   const searchMovies = async (searchValue) => {
+    const options = {
+      accept: "application/json",
+      method: "GET",
+    };
     const fetchReq = await fetch(
-      `https://api.themoviedb.org/3/search/movie?${params}&language=en-US&query=${searchValue}`
+      `https://api.themoviedb.org/3/search/movie?${params}&language=en-US&query=${searchValue}`,
+      options
     );
 
     if (!fetchReq.ok) {
@@ -65,11 +70,12 @@ export const MovieContextProvider = ({ children }) => {
       window.location.href = "/";
     }
     const fetchResult = await fetchReq.json();
-    const result = fetchResult.result;
-    dispatch({
-      type: "SEARCH_LIST",
-      payload: result,
-    });
+    // const result = fetchResult.result;
+    console.log(fetchResult);
+    // dispatch({
+    //   type: "SEARCH_LIST",
+    //   payload: result,
+    // });
   };
   return (
     <React.Fragment>
