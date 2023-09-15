@@ -16,7 +16,8 @@ import Form from "../components/Form/form";
 import Movielists from "../components/movies/movielist";
 import MovieContext from "../context/movieContext";
 const Home = () => {
-  const { fetchMoviesall, onSearch, SearchVal } = useContext(MovieContext);
+  const { fetchMoviesall, onSearch, SearchVal, clearMovies } =
+    useContext(MovieContext);
   const [movieInf, setMovieinf] = useState([]);
   const [bg, setBg] = useState("");
 
@@ -54,7 +55,7 @@ const Home = () => {
   };
   //clear function
   const clearData = () => {
-    alert("cleared");
+    window.confirm("Did You Wish To Clear Your tasks") && clearMovies();
   };
   return (
     <>

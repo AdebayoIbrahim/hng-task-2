@@ -103,6 +103,7 @@ export const MovieContextProvider = ({ children }) => {
           fetchMoviesall,
           searchMovies,
           inputResult,
+          clearMovies,
         }}
       >
         {children}
