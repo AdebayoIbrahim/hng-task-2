@@ -4,7 +4,6 @@ import imdb from "../../assets/imdb.png";
 import tomato from "../../assets/tomato.png";
 import genreData from "../shared/genreData";
 import { Link } from "react-router-dom";
-
 const Movieitem = ({ movies }) => {
   const baseUrl = "https://image.tmdb.org/t/p/original";
 
@@ -16,7 +15,7 @@ const Movieitem = ({ movies }) => {
   return (
     <>
       <Grid item xl={2} lg={3} md={4} sm={6} xs={12} data-testid="movie-card">
-        <Box>
+        <Link to={`/movies/${movies.id}`} style={{ textDecoration: "none" }}>
           <Box>
             <img
               data-testid="movie-poster"
@@ -59,7 +58,7 @@ const Movieitem = ({ movies }) => {
               alignItems="center"
               justifyContent="space-between"
             >
-              <Stack direction="row">
+              <Stack direction="row" sx={{ color: "black" }}>
                 <img src={imdb} alt="imdb" />
                 <Typography
                   ml={2}
@@ -69,7 +68,7 @@ const Movieitem = ({ movies }) => {
                   86.0/100
                 </Typography>
               </Stack>
-              <Stack direction="row">
+              <Stack direction="row" sx={{ color: "black" }}>
                 <img src={tomato} alt="imdb" />
                 <Typography
                   ml={2}
@@ -92,7 +91,7 @@ const Movieitem = ({ movies }) => {
               {`${genreNames.join(", ")}`}
             </Typography>
           </Stack>
-        </Box>
+        </Link>
       </Grid>
     </>
   );
