@@ -78,7 +78,7 @@ const Home = () => {
           backgroundSize: "cover",
           width: "100%",
           minHeight: "90vh",
-
+          backgroundRepeat: "no-repeat",
           padding: "1.2rem 5%",
         }}
       >

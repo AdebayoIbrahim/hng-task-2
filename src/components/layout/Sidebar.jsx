@@ -38,6 +38,7 @@ export default function Sidebar() {
         pt={5}
         pr={2}
         pl={2}
+        sx={{ display: { sm: "none" } }}
       >
         <img src={Logo} alt="logo" />
         <Typography variant="body2" fontSize={18} color="black">

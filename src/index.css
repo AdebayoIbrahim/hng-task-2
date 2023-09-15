@@ -27,3 +27,9 @@ body {
 .load {
   text-align: center;
 }
+
+@media only screen and (max-width: 600px) {
+  body {
+    font-family: 80%;
+  }
+}

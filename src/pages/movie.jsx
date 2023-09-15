@@ -9,9 +9,9 @@ const Movie = () => {
     <Box>
       <Stack direction="row" gap={2} sx={{ width: "100%" }}>
         <Box
-          flex="1.8"
           sx={{
             background: "white",
+            flex: { md: "1.8", sm: ".5" },
             height: "100vh",
             border: "1px solid rgba(225,225,225,.7)",
             borderRadius: "0 3em 3em 0",
@@ -24,6 +24,7 @@ const Movie = () => {
               pt={3}
               pb={1}
               sx={{
+                display: { sm: "none", lg: "block" },
                 border: "2px solid rgba(190, 18, 60, .3)",
                 background: "rgba(190, 18, 60, .05)",
                 borderRadius: ".8em",
@@ -36,7 +37,11 @@ const Movie = () => {
               <Typography variant="body2" pt={2} color="#666666">
                 50k people are playing now
               </Typography>
-              <Box pt={4} textAlign="center">
+              <Box
+                pt={4}
+                textAlign="center"
+                sx={{ display: { sm: "none", lg: "block" } }}
+              >
                 <Typography
                   component="button"
                   variant="contained"
@@ -53,7 +58,10 @@ const Movie = () => {
                 </Typography>
               </Box>
             </Box>
-            <Box pt={4} sx={{}}>
+            <Box pt={4} sx={{ dislay: { sm: "block", lg: "none" } }}>
+              <Logout />
+            </Box>
+            <Box pt={4} sx={{ dislay: { sm: "none", lg: "block" } }}>
               <Button
                 fontSize={20}
                 startIcon={<Logout />}

@@ -25,7 +25,12 @@ const Form = () => {
   };
   return (
     <>
-      <Box component="form" autoComplete="off" onSubmit={handleSubmit}>
+      <Box
+        component="form"
+        autoComplete="off"
+        onSubmit={handleSubmit}
+        sx={{ display: { sm: "none", md: "block" } }}
+      >
         <TextField
           id="input"
           variant="outlined"
@@ -40,6 +45,7 @@ const Form = () => {
               xs: "translate(-50%,-50%)",
               sm: "none",
             },
+
             position: { xs: "absolute", sm: "initial" },
             left: { xs: "50%" },
             top: { xs: "15%" },
