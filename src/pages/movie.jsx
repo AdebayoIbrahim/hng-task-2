@@ -11,20 +11,25 @@ const Movie = () => {
         <Box
           sx={{
             background: "white",
-            flex: { md: "1.8", sm: ".5" },
+            flex: { md: "1.8" },
+            width: { sm: "100px", xs: "50px" },
             height: "100vh",
             border: "1px solid rgba(225,225,225,.7)",
             borderRadius: "0 3em 3em 0",
-            overflow: "auto !important",
+            overflowY: "auto !important",
+            overflowX: "hidden !important",
           }}
         >
           <Sidebar />
-          <Box pl={5} pr={5}>
+          <Box
+            pl={5}
+            pr={5}
+            sx={{ display: { xs: "none", sm: "none", lg: "block" } }}
+          >
             <Box
               pt={3}
               pb={1}
               sx={{
-                display: { sm: "none", lg: "block" },
                 border: "2px solid rgba(190, 18, 60, .3)",
                 background: "rgba(190, 18, 60, .05)",
                 borderRadius: ".8em",
@@ -58,10 +63,10 @@ const Movie = () => {
                 </Typography>
               </Box>
             </Box>
-            <Box pt={4} sx={{ dislay: { sm: "block", lg: "none" } }}>
-              <Logout />
+            <Box pt={4} sx={{ display: { sm: "block", lg: "none" } }}>
+              <Logout mr={10} sx={{ fill: "black" }} />
             </Box>
-            <Box pt={4} sx={{ dislay: { sm: "none", lg: "block" } }}>
+            <Box pt={4} sx={{ display: { sm: "none", lg: "block" } }}>
               <Button
                 fontSize={20}
                 startIcon={<Logout />}
