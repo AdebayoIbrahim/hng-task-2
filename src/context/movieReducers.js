@@ -14,6 +14,9 @@ const MovieReducer = (state, action) => {
         movies: action.payload,
         loading: false,
       };
+    case "SEARCH_LIST": {
+      return { ...state, movies: action.payload, loading: false };
+    }
     default:
       return state;
   }

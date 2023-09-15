@@ -55,7 +55,22 @@ export const MovieContextProvider = ({ children }) => {
   };
 
   //search movies
-  const searchMovies = async (search) => {};
+  const searchMovies = async (searchValue) => {
+    const fetchReq = await fetch(
+      `https://api.themoviedb.org/3/search/movie?${params}&language=en-US&query=${searchValue}&page=1&include_adult=false`
+    );
+
+    if (!fetchReq.ok) {
+      alert("Error " + fetchReq.status);
+      window.location.href = "/";
+    }
+    const fetchResult = await fetchReq.json();
+    const result = fetchResult.result;
+    dispatch({
+      type: "SEARCH_LIST",
+      payload: result,
+    });
+  };
   return (
     <React.Fragment>
       <MovieContext.Provider
@@ -63,6 +78,7 @@ export const MovieContextProvider = ({ children }) => {
           ...state,
           fetchMovies,
           fetchMoviesall,
+          searchMovies,
         }}
       >
         {children}
