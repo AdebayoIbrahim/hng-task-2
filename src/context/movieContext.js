@@ -70,12 +70,12 @@ export const MovieContextProvider = ({ children }) => {
       window.location.href = "/";
     }
     const fetchResult = await fetchReq.json();
-    // const result = fetchResult.result;
-    console.log(fetchResult);
-    // dispatch({
-    //   type: "SEARCH_LIST",
-    //   payload: result,
-    // });
+    const result = fetchResult.results;
+    console.log(result);
+    dispatch({
+      type: "SEARCH_LIST",
+      payload: result,
+    });
   };
   return (
     <React.Fragment>

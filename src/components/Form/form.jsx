@@ -22,7 +22,7 @@ const Form = () => {
   };
   return (
     <>
-      <Box component="form" onSubmit={handleSubmit}>
+      <Box component="form" autoComplete="off" onSubmit={handleSubmit}>
         <TextField
           id="input"
           variant="outlined"
