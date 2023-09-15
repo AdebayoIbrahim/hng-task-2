@@ -13,7 +13,7 @@ export const MovieContextProvider = ({ children }) => {
   const params = new URLSearchParams({
     api_key: api_key,
   });
-  const api_url = `https://api.themoviedb.org/3/movie/popular?${params}`;
+  const api_url = `https://api.themoviedb.org/3/movie/top_rated?${params}`;
 
   //fetching top10 movies
   const fetchMovies = async () => {

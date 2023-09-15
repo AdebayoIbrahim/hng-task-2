@@ -152,7 +152,7 @@ const Main = () => {
                   fontFamily="poppins"
                   data-testid="movie-runtime"
                 >
-                  {`${moviearr.runtime}m`}
+                  {`${moviearr.runtime}`}
                 </Typography>
                 <Typography
                   fontWeight={600}
@@ -199,6 +199,19 @@ const Main = () => {
                 >
                   More watch options
                 </Button>
+              </Stack>
+            </Stack>
+            <Stack direction="row" pt={3} pl={2}>
+              <Stack direction="column" gap={2} color="black">
+                <Typography>
+                  Directors: <span></span>
+                </Typography>
+                <Typography>
+                  Writers: <span></span>
+                </Typography>
+                <Typography>
+                  Stars: <span></span>
+                </Typography>
               </Stack>
             </Stack>
           </>
