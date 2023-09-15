@@ -20,6 +20,7 @@ const Form = () => {
       // alert("good to go");
       //input value
       inputResult(value);
+      setValue("");
     }
   };
   return (
