@@ -48,8 +48,13 @@ const Home = () => {
     return () => clearInterval(interval);
     // eslint-disable-next-line
   }, []);
+  //see more function
   const seeMore = () => {
     fetchMoviesall();
+  };
+  //clear function
+  const clearData = () => {
+    alert("cleared");
   };
   return (
     <>
@@ -162,7 +167,7 @@ const Home = () => {
             variant="caption"
             sx={{ cursor: "pointer" }}
             fontWeight={500}
-            onClick={seeMore}
+            onClick={onSearch ? clearData : seeMore}
           >
             {onSearch ? "Clear" : "See more >"}
           </Typography>

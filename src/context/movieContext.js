@@ -87,6 +87,13 @@ export const MovieContextProvider = ({ children }) => {
       payload: searchVal,
     });
   };
+
+  //clear movies
+  const clearMovies = () => {
+    dispatch({
+      type: "CLEAR_MOVIES",
+    });
+  };
   return (
     <React.Fragment>
       <MovieContext.Provider
