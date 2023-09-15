@@ -56,9 +56,10 @@ const Home = () => {
       <Box
         sx={{
           background: `url(${bg})`,
+          backgroundSize: "cover",
           width: "100%",
           minHeight: "90vh",
-          backgroundSize: "cover",
+
           padding: "1.2rem 5%",
         }}
       >

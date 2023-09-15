@@ -1,14 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Box, TextField, InputAdornment } from "@mui/material";
 import { Search } from "@mui/icons-material";
+import MovieContext from "../../context/movieContext";
 const Form = () => {
   const [value, setValue] = useState("");
   const handleChange = (e) => {
     setValue(e.target.value);
   };
+
+  const { searchMovies } = useContext(MovieContext);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (value === "" || value.trim().length < 1) {
+      alert("Search cant be Empty");
+      return;
+    } else {
+      // searchMovies(value)
+      alert("good to go");
+    }
+  };
   return (
     <>
-      <Box component="form">
+      <Box component="form" onSubmit={handleSubmit}>
         <TextField
           id="input"
           variant="outlined"

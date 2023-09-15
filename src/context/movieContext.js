@@ -57,7 +57,7 @@ export const MovieContextProvider = ({ children }) => {
   //search movies
   const searchMovies = async (searchValue) => {
     const fetchReq = await fetch(
-      `https://api.themoviedb.org/3/search/movie?${params}&language=en-US&query=${searchValue}&page=1&include_adult=false`
+      `https://api.themoviedb.org/3/search/movie?${params}&language=en-US&query=${searchValue}`
     );
 
     if (!fetchReq.ok) {
