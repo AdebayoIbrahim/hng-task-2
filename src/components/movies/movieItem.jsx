@@ -4,6 +4,8 @@ import imdb from "../../assets/imdb.png";
 import tomato from "../../assets/tomato.png";
 import genreData from "../shared/genreData";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+
 const Movieitem = ({ movies }) => {
   const baseUrl = "https://image.tmdb.org/t/p/original";
 

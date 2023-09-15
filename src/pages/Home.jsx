@@ -16,7 +16,7 @@ import Form from "../components/Form/form";
 import Movielists from "../components/movies/movielist";
 import MovieContext from "../context/movieContext";
 const Home = () => {
-  const { fetchMoviesall } = useContext(MovieContext);
+  const { fetchMoviesall, onSearch } = useContext(MovieContext);
   const [movieInf, setMovieinf] = useState([]);
   const [bg, setBg] = useState("");
 
@@ -154,7 +154,7 @@ const Home = () => {
           alignItems="center"
         >
           <Typography variant="body1" fontSize={36} fontWeight={700}>
-            Featured Movie
+            {onSearch ? "Serach results for .." : "Featured Movie"}
           </Typography>
           <Typography
             color="#BE123C"
@@ -164,7 +164,7 @@ const Home = () => {
             fontWeight={500}
             onClick={seeMore}
           >
-            See more &gt;
+            {onSearch ? "Clear" : "See more >"}
           </Typography>
         </Stack>
         <Movielists />

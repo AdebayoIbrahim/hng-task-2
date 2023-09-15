@@ -5,6 +5,7 @@ export const MovieContextProvider = ({ children }) => {
   const initialState = {
     movies: [],
     loading: true,
+    onSearch: false,
   };
   const [state, dispatch] = useReducer(MovieReducer, initialState);
   const api_key = "d2af3cef5640d578a1839a201a48a671";
