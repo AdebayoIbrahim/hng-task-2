@@ -6,6 +6,7 @@ export const MovieContextProvider = ({ children }) => {
     movies: [],
     loading: true,
     onSearch: false,
+    SearchVal: null,
   };
   const [state, dispatch] = useReducer(MovieReducer, initialState);
   const api_key = "d2af3cef5640d578a1839a201a48a671";
@@ -78,6 +79,14 @@ export const MovieContextProvider = ({ children }) => {
       payload: result,
     });
   };
+
+  //input values
+  const inputResult = (searchVal) => {
+    dispatch({
+      type: "SEARCH_INP",
+      payload: searchVal,
+    });
+  };
   return (
     <React.Fragment>
       <MovieContext.Provider
@@ -86,6 +95,7 @@ export const MovieContextProvider = ({ children }) => {
           fetchMovies,
           fetchMoviesall,
           searchMovies,
+          inputResult,
         }}
       >
         {children}

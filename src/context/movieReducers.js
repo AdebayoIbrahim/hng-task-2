@@ -14,12 +14,18 @@ const MovieReducer = (state, action) => {
         movies: action.payload,
         loading: false,
       };
-    case "SEARCH_LIST": {
+    case "SEARCH_LIST":
       return {
         ...state,
         onSearch: true,
         movies: action.payload,
         loading: false,
+      };
+
+    case "SEARCH_INP": {
+      return {
+        ...state,
+        SearchVal: action.payload,
       };
     }
     default:

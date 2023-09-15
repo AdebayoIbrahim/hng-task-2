@@ -8,16 +8,18 @@ const Form = () => {
     setValue(e.target.value);
   };
 
-  const { searchMovies } = useContext(MovieContext);
+  const { searchMovies, inputResult } = useContext(MovieContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (value === "" || value.trim().length < 1) {
-      alert("Search cant be Empty");
+      alert("Search can't be Empty");
       return;
     } else {
       searchMovies(value);
       // alert("good to go");
+      //input value
+      inputResult(value);
     }
   };
   return (
@@ -32,7 +34,7 @@ const Form = () => {
           sx={{
             borderColor: "white !important",
             borderRadius: "8px",
-            width: { md: "400px", lg: "50ppx", sm: "300px", xl: "700px" },
+            width: { md: "400px", lg: "500px", sm: "400px", xl: "700px" },
             transform: {
               xs: "translate(-50%,-50%)",
               sm: "none",

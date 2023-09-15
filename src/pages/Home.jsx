@@ -16,7 +16,7 @@ import Form from "../components/Form/form";
 import Movielists from "../components/movies/movielist";
 import MovieContext from "../context/movieContext";
 const Home = () => {
-  const { fetchMoviesall, onSearch } = useContext(MovieContext);
+  const { fetchMoviesall, onSearch, SearchVal } = useContext(MovieContext);
   const [movieInf, setMovieinf] = useState([]);
   const [bg, setBg] = useState("");
 
@@ -154,7 +154,7 @@ const Home = () => {
           alignItems="center"
         >
           <Typography variant="body1" fontSize={36} fontWeight={700}>
-            {onSearch ? "Serach results for .." : "Featured Movie"}
+            {onSearch ? `Serach results for '${SearchVal}'` : "Featured Movie"}
           </Typography>
           <Typography
             color="#BE123C"
