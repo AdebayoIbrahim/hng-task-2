@@ -38,14 +38,27 @@ const Home = () => {
         return;
       }
       const result = await movieList.json();
+      const movieIdsToFilter = [
+        "968051",
+        "603692",
+        "335977",
+        "734253",
+        "990140",
+        "1008042",
+        "569094",
+        "346698",
+        "385687",
+      ];
       //random 5
-      const dataEnd = result.results;
+      const dataEnd = result.results.filter((item) =>
+        movieIdsToFilter.includes(item.id.toString())
+      );
       const random = dataEnd[Math.floor(Math.random() * dataEnd.length)];
       setMovieinf(random);
       setBg(`${baseUrl}${random.backdrop_path}`);
     };
     fetchData();
-    const interval = setInterval(fetchData, 5000);
+    const interval = setInterval(fetchData, 3500);
     return () => clearInterval(interval);
     // eslint-disable-next-line
   }, []);
