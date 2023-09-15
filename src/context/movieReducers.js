@@ -9,6 +9,7 @@ const MovieReducer = (state, action) => {
         ...state,
         movies: action.payload,
         loading: false,
+        onSearch: false,
       };
     case "FETCH_MOVIES_ALL":
       return {
