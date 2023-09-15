@@ -1,7 +1,4 @@
 //setting up reducers
-
-import { Search } from "@mui/icons-material";
-
 const MovieReducer = (state, action) => {
   switch (action.type) {
     case "FETCH_MOVIES_TOP":

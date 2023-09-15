@@ -14,6 +14,7 @@ export const MovieContextProvider = ({ children }) => {
     api_key: api_key,
   });
   const api_url = `https://api.themoviedb.org/3/movie/popular?${params}`;
+
   //fetching top10 movies
   const fetchMovies = async () => {
     const options = {

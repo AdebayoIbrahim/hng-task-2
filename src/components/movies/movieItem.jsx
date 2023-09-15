@@ -4,7 +4,6 @@ import imdb from "../../assets/imdb.png";
 import tomato from "../../assets/tomato.png";
 import genreData from "../shared/genreData";
 import { Link } from "react-router-dom";
-import { format } from "date-fns";
 
 const Movieitem = ({ movies }) => {
   const baseUrl = "https://image.tmdb.org/t/p/original";
@@ -36,7 +35,7 @@ const Movieitem = ({ movies }) => {
               variant="caption"
               data-testid="movie-release-date"
             >
-              {format(new Date(movies.release_date), "MMMM do, yyyy")}
+              {movies.release_date}
             </Typography>
             <Typography
               fontSize={18}

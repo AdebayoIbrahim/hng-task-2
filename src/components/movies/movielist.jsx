@@ -3,7 +3,7 @@ import { Box, Button, Grid, Typography } from "@mui/material";
 import Movieitem from "./movieItem";
 import Spinner from "../shared/Spinner";
 import MovieContext from "../../context/movieContext";
-import { Link } from "react-router-dom";
+
 const Movielists = () => {
   const { movies, loading, fetchMovies } = useContext(MovieContext);
 
