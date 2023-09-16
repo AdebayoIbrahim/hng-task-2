@@ -29,7 +29,7 @@ body {
 }
 
 @media only screen and (max-width: 600px) {
-  body {
-    font-family: 80% !important;
+  html {
+    font-family: 90% !important;
   }
 }
