@@ -2,7 +2,7 @@
 
 #### This is the first version featuring generating popular movies their details and release date, Search functionality and more..
 
-#### More Feature will be available on this later like adding to favourites watch trailers and more  BUT this will end here for submission purposes and not to exceed submission deadline
+#### More Feature will be available on this later like adding to favourites watch trailers and more..  BUT this will end here for submission purposes and not to exceed submission deadline
 STAGE 2 TASK
 Objective
 Create a movie discovery web application that allows users to search for movies, view details about them, and save their favorite movies. You’ll be consuming data from the TMDB API.
