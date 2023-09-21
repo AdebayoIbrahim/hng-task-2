@@ -1,6 +1,6 @@
 ## Stage2 task For the hng internship
 
-#### This is the first version featuring generating popular movies their details and release date, Search functionality and more
+#### This is the first version featuring generating popular movies their details and release date, Search functionality and more..
 
 #### More Feature will be available on this later like adding to favourites watch trailers and more  BUT this will end here for submission purposes and not to exceed submission deadline
 STAGE 2 TASK
